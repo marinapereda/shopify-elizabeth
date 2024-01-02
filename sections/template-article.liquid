@@ -20,7 +20,7 @@
 				<div class="flex items-center justify-center">
 					<div class="max-w-7xl text-center">
 						{% if section.settings.enable_published_date %}
-							<time itemprop="datePublished dateCreated"  datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+							<time itemprop="datePublished dateCreated"  datetime="{{ article.published_at | date: '%FT%T%:z' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
 						{% endif %}
 					</div>
 				</div>
@@ -160,7 +160,7 @@
 	</div>
 {% endif %}
 
-<script>
+<script type="application/jd+json">
 {
 	"@context": "http://schema.org",
 	"@type": "BlogPosting",
@@ -174,8 +174,8 @@
 			{{ article.image | image_url: "medium" | prepend: 'https:' | json }},
 		],
 	{% endif %}
-	"datePublished": {{ article.published_at | date: format: 'default' | json}},
-	"dateCreated": {{ article.published_at | date: format: 'month_day_year' | json}},
+	"datePublished": "{{ article.published_at | date: '%FT%T%:z' | json }}",
+	"dateCreated": "{{ article.published_at | date: '%FT%T%:z' | json }}",
 	"author": {
 		"@type": "Person",
 		"name": {{ article.author | json }}
