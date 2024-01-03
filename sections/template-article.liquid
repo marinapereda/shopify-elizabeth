@@ -60,7 +60,7 @@
 			<h2 class="text-lg mb-4 font-medium">
 				See what people are saying:
 			</h2>
-			{% paginate article.comments by 5 %}
+			{% paginate article.comments by 4 %}
 				{% for comment in article.comments %}
 					<div class="flex-1 border my-4 px-4 sm:px-6 sm:py-4 leading-relaxed">
 						<span class="comment-author">
@@ -74,9 +74,9 @@
 					</div>
 				{% endfor %}
 
-				{% if paginate.pages > 1 %}
-					{{ paginate | default_pagination }}
-				{% endif %}
+				<div class="max-w-6xl mx-auto">
+					{% render 'pagination', pagination: paginate %}
+				</div>
 			{% endpaginate %}
 		</div>
 		{% else %}
