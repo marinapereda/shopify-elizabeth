@@ -4,13 +4,13 @@
 	<div class="block md:flex gap-4">
 		{% assign number_of_orders = customer.orders | size %}
 		{% if number_of_orders > 0 %}
-			<div class="w-3/4 md:w-full my-6">
+			<div class="w-full my-6 md:my-12">
 				<h2 class="text-xl font-bold text-gray-700">Order History</h2>
 				
 				<div class="mt-6 grid grid-cols-4 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 					{% paginate customer.orders by 10 %}
 						{% for order in customer.orders %}
-							<div class="relative w-full">
+							<div class="relative">
 								<div class="w-full min-80 bg-gray-500 rounded-md overflow-hidden lg:h-80">
 									{% if order.line_items.first.image %}
 										<img 
@@ -50,7 +50,7 @@
 			</div>
 		{% endif %}
 		
-		<div class="w-1/4 md:w-full">
+		<div class="w-full md:w-1/4 ">
 			<h2 class="text-xl font-bold text-gray-700 mb-12">Account Details</h2>
 			{{ customer.default_address | format_address }}
 		</div>
