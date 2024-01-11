@@ -1,10 +1,8 @@
 {
-	"sections": {
-		"template": {
-			"type": {
-				"template-customer-account"
-			}
-		},
-		"order": ["template"]
-	}
+  "sections": {
+    "template": {
+      "type": "template-customer-account"
+    }
+  },
+  "order": ["template"]
 }
