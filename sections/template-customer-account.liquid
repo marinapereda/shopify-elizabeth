@@ -6,11 +6,11 @@
 		{% if number_of_orders > 0 %}
 			<div class="w-full my-6 md:my-12">
 			<h2 class="text-xl font-bold text-gray-700">Order History</h2>
-			<div class="mt-6 grid grid-cols-1 gapy-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+			<div class="mt-6 grid grid-cols-4 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 				{% paginate customer.orders by 10 %}
 					{% for order in customer.orders %}
 						<div class="relative">
-							<div class="w-full min-h-2 bg-gray-200 rounded-md overflow-hidden lg:h-80">
+							<div class="w-full min-80 bg-gray-200 rounded-md overflow-hidden lg:h-80">
 								{% if order.line_items.first.image %}
 									<img 
 										class="w-full h-full object-center object-cover"
