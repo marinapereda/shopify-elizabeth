@@ -1,9 +1,11 @@
 <div class="max-w-6xl mx-auto px-4 py-12" x-data="{ new_address: false }">
+	
 	<div class="flex flex-col md:flex-row items-center justify-between my-5 gap-4">
 		<h1 class="text-2xl font--bold text-gray-700">Addresses</h1>
 		<button x-on:click="new_address = true" type="button" class="text-white font-medium bg-gray-700 hover:bg-gray-900 px-6 py-2">Create new address</button>
 		<a href="{{ routes.account_url }}" class="text-blue-600 hover:text-blue-800 font-medium underline">Back to Account</a>
 	</div>
+
 	<div x-show="new_address" class="h-full w-full fixed inset-0 bg-grey-600 bg-opacity-50 overflow-y-auto z-50">
 		<div class="relative max-w-md mx-auto bg-white border top-20 p-4">
 			<div class="flex items-center justify-between mb-4">
@@ -156,3 +158,17 @@
 		{% endpaginate %}
 	</div>
 </div>
+
+<script>
+	class CustomerAddress{
+		constructor() {
+			this.initCustomerAddress();
+		}
+
+		initCustomerAddress() {
+			console.log("Hello world")
+		}
+	}
+
+	const customerAddress = new CustomerAddress();
+</script>
