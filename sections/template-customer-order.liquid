@@ -100,7 +100,7 @@
 							{% else %}
 								{% assign background = 'bg-green-700' %}
 						{% endcase %}
-						<span class="{{ background }} rounded-full text-sm px-4 py-1 text-white">{{ transaction.status_label }}</span>
+						<span class="{{ background }}  rounded-full text-sm px-4 py-1 text-white">{{ transaction.status_label }}</span>
 					{% else %}
 						<p class="text-sm mb-4">This order is manually placed {{ shop.name }}</p>
 					{% endif %}
