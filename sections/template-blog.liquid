@@ -12,10 +12,11 @@
 								<a href="{{ article.url }}">
 									<img 
 										class="w-full h-80 object-cover" 
-										src="{{ article.image | img_url: 'large' }}"
+										src="{{ article.image | image_url: size: 'large' }}"
 										alt="{{ article.image.alt }}" 
 										width="{{ image.width }}" 
 										height="{{ image.height }}"
+										loading="eager"
 									>
 								</a>
 							{% else %}

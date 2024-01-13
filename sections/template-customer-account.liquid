@@ -16,10 +16,11 @@
 										<a href="{{ order.customer_url }}">
 											<img 
 												class="w-full h-full object-center object-cover"
-												src="{{ order.line_items.first.image | img_url: 'medium' }}" 
+												src="{{ order.line_items.first.image | image_url: size: 'medium' }}" 
 												alt="{{ order.line_items.first.image.alt }}" 
 												width="80" 
 												height="80"
+												loading="eager"
 											>
 										</a>
 									{% else %}

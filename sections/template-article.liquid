@@ -29,10 +29,11 @@
 					{% if article.image != blank %}
 						<img 
 							class="w-full h-80 md:h-96 object-cover object-center" 
-							src="{{ article.image | img_url: 'large' }}"
+							src="{{ article.image | image_url: size: 'large' }}"
 							alt="{{ article.image.alt }}" 
 							width="{{ image.width }}" 
 							height="{{ image.height }}"
+							loading="eager"
 						>
 						{% else %}
 							{% assign placeholder_image = 'lifestyle-1' %}
@@ -108,7 +109,7 @@
 				{% elsif form.posted_successfully? %}
 					<div class="flex flex-row items-center w-full my-3 p-5">
 						<div class="text-green-500">
-							{% render 'icon-success' %}
+							{% render 'icon_success' %}
 						</div>
 						<div class="text-sm font-medium ml-3">
 							Comment is posted succesfully
@@ -171,7 +172,7 @@
 	{% endif %}
 	{% if article.image %}
 		"image": [
-			{{ article.image | img_url: "medium" | prepend: 'https:' | json }},
+			{{ article.image | image_url: size: 'medium' | prepend: 'https:' | json }},
 		],
 	{% endif %}
 	"datePublished": "{{ article.published_at | date: '%FT%T%:z' | json }}",
