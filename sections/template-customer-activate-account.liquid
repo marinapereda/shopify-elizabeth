@@ -6,7 +6,7 @@
 		</div>
 
 		<div>
-			{% form 'active_customer_password', class: 'space-y-4', id: 'activate_account_form' %}
+			{% form 'active_customer_password', class: 'space-y-4', id: 'activate_account_form', 'create_customer' %}
 				{% if form.errors %}
 					<div class="relative border border-red-700 bg-red-100 text-red-700 px-4 py-3" role="alert">
 						<strong>Error!</strong>
