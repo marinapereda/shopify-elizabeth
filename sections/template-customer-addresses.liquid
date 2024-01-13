@@ -173,7 +173,7 @@
 			if(allAddressesSelector.length < 1) return;
 
 			allAddressesSelector.forEach(select => {
-				var selectedCountry = this.selectedCountry(select);
+				var selectedCountry = this.getSelectedCountry(select);
 
 				if(!selectedCountry) return;
 
