@@ -29,7 +29,7 @@
 					{% if article.image != blank %}
 						<img 
 							class="w-full h-80 md:h-96 object-cover object-center" 
-							src="{{ article.image | image_url: size: 'large' }}"
+							src="{{ article.image | image_url: width: 1200 | image_tag: widths: '600, 800, 1200', sizes: '(min-width: 400px) 298px, 78.75vw', style: 'width: 600px' }}"
 							alt="{{ article.image.alt }}" 
 							width="{{ image.width }}" 
 							height="{{ image.height }}"

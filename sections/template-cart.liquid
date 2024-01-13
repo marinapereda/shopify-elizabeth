@@ -23,10 +23,11 @@
 								<a href="{{ item.url }}">
 									{% if item.image %}
 										<img 
-											src="{{ item.image | image_url: size: 'small' }}" 
+											src="{{ img_url }}" 
+											srcset="{{ img_url }} 1x, {{ item.image | image_url: '600x' }} 2x" 
 											alt="{{ item.title | escape }}" 
 											class="w-20 h-20 object-cover border"
-											width="400" height="400"
+											width="300" height="300"
 											loading="eager"
 										>
 									{% else %}

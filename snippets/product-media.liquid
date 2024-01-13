@@ -2,7 +2,7 @@
 
 	{% when 'image' %}
 		<img 
-			src="{{ media | image_url: size: 'large' }}"
+			src="{{ media | image_url: width: 400, height: 400 }}"
 			alt="{{ media.preview_image.alt }}"
 			class="w-full h-full object-cover"
 			width="400"
