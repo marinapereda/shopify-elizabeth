@@ -90,6 +90,7 @@
 						data-country-selector
 						data-id="{{ form.id }}"
 					>
+						<option value="" disabled selected>---</option>
 						{{ all_country_option_tags }}
 					</select>
 				</div>
@@ -162,6 +163,11 @@
 </div>
 
 <script>
+	document.addEventListener("DOMContentLoaded", function() {
+    var selectElement = document.getElementById(`address_country_${select.dataset.id}`);
+    selectElement.value = "";
+	});
+
 	class CustomerAddress{
 		constructor() {
 			this.initCustomerAddress();
