@@ -13,7 +13,8 @@
 						<span class="block sm:inline">{{ form.errors | default_errors }}</span>
 					</div>
 				{% endif %}
-				<div>
+
+				<div class="mb-3">
 					<label for="password">Password</label>
 					<input 
 						type="password" 
@@ -25,7 +26,7 @@
 					>
 				</div>
 
-				<div>
+				<div class="mb-3">
 					<label for="confirm_password">Confirm Password</label>
 					<input 
 						type="password" 
@@ -37,7 +38,7 @@
 					>
 				</div>
 
-				<div class="block md:flex mt-4">
+				<div class="block md:flex">
 					<button type="submit" class="w-full border py-2 px-4 text-sm font-medium text-white bg-gray-700 hover:bg-gray-900">Activate Account</button>
 					<button name="decline" type="submit" class="w-full border py-2 px-4 text-sm font-medium text-gray-700 bg-white hover:bg-gray-700 hover:text-white">Decline Invitation</button>
 				</div>
