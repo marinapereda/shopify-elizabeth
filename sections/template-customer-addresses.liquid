@@ -307,8 +307,11 @@
 
                 if(!selectedCountry) return;
 
-                var provinces = selectedCountry.dataset.provinces;
-                var arrayOfProvince = JSON.parse(provinces);
+					 var provinces = this.options[this.selectedIndex].dataset.provinces;
+
+					 if (provinces) {
+						var arrayOfProvince = JSON.parse(provinces);
+					}
 
                 var provinceSelector = document.querySelector(`#address_province_${select.dataset.id}`);
 
